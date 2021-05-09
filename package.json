@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "My ecommerce site",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix ecommerce-frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +22,11 @@
   },
   "homepage": "https://github.com/pankaj3399/mernecommerce#readme",
   "dependencies": {
+    "dotenv": "^9.0.1",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.1.0",
+    "nodemon": "^2.0.7"
   }
 }
